@@ -48,3 +48,22 @@ ctaButtons.forEach(button => {
         console.log("CTA Clicked");
     });
 });
+// Contact Form Mailto
+const contactForm = document.querySelector(".contact-form");
+
+contactForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent normal submit
+
+    // Get form values
+    const name = document.getElementById("contact-name").value;
+    const email = document.getElementById("contact-email").value;
+    const message = document.getElementById("contact-message").value;
+
+    // Build mailto link
+    const mailtoLink = `mailto:successflightedu@gmail.com
+?subject=Contact Form Submission from ${encodeURIComponent(name)}
+&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AMessage: ${encodeURIComponent(message)}`;
+
+    // Open user's email client
+    window.location.href = mailtoLink;
+});
