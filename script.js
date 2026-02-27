@@ -60,7 +60,7 @@ contactForm.addEventListener("submit", function(e) {
     const message = document.getElementById("contact-message").value;
 
     // Build mailto link
-    const mailtoLink = `mailto:successflightedu@gmail.com
+    const mailtoLink = `mailto:ojimaduugochuckwu101@gmail.com
 ?subject=Contact Form Submission from ${encodeURIComponent(name)}
 &body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AMessage: ${encodeURIComponent(message)}`;
 
