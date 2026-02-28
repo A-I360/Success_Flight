@@ -262,7 +262,7 @@ h4 {
 }
 /* WhatsApp Floating Button */
 .whatsapp-float {
-    position: fixed;
+    position: center;
     width: 60px;
     height: 60px;
     bottom: 20px;
