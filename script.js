@@ -31,15 +31,6 @@ faqQuestions.forEach(question => {
     });
 });
 
-// ================= CONTACT FORM =================
-const form = document.querySelector(".contact-form");
-
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Thank you for contacting Success Flight Educational Services. We will respond shortly.");
-    form.reset();
-});
-
 // ================= CTA BUTTONS =================
 const ctaButtons = document.querySelectorAll(".primary-btn");
 
@@ -48,23 +39,34 @@ ctaButtons.forEach(button => {
         console.log("CTA Clicked");
     });
 });
-// Contact Form Mailto
+// ================= CONTACT FORM =================
 const contactForm = document.querySelector(".contact-form");
 
 contactForm.addEventListener("submit", function(e) {
-    e.preventDefault(); // prevent normal submit
+    e.preventDefault(); // stop normal form submission
 
-    // Get form values
-    const name = document.getElementById("contact-name").value;
-    const email = document.getElementById("contact-email").value;
-    const message = document.getElementById("contact-message").value;
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
 
-    // Build mailto link
-    const mailtoLink = `mailto:successflight1@gmail.com
-?subject=Contact Form Submission from ${encodeURIComponent(name)}
-&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AMessage: ${encodeURIComponent(message)}`;
-    
+    // Build mailto link safely
+    const mailtoLink = `mailto:successflight1@gmail.com?subject=${
+        encodeURIComponent("Contact Form Submission from " + name)
+    }&body=${
+        encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Message:\n" + message
+        )
+    }`;
 
-    // Open user's email client
+    // Open email client
     window.location.href = mailtoLink;
+
+    // Optional success message
+    alert("Thank you for contacting Success Flight Educational Services. We will respond shortly.");
+
+    contactForm.reset();
 });
+contactForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent normal submit
