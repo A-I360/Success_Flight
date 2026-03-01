@@ -68,5 +68,3 @@ contactForm.addEventListener("submit", function(e) {
 
     contactForm.reset();
 });
-contactForm.addEventListener("submit", function(e) {
-    e.preventDefault(); // prevent normal submit
