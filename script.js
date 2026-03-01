@@ -40,7 +40,7 @@ ctaButtons.forEach(button => {
     });
 });
 // ================= CONTACT FORM =================
-const contactForm = document.querySelector(".contact-form");
+const contactForm = document.querySelector("contact-form");
 
 contactForm.addEventListener("submit", function(e) {
     e.preventDefault(); // stop normal form submission
