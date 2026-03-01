@@ -66,5 +66,5 @@ contactForm.addEventListener("submit", function(e) {
     // Optional success message
     alert("Thank you for contacting Success Flight Educational Services. We will respond shortly.");
 
-    contactForm.reset();
+    contactForm.reset(3);
 });
